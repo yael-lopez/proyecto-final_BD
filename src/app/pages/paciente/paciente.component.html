@@ -1,0 +1,63 @@
+<h1>Mascota <small>Nombre mascota</small> </h1>
+<hr>
+
+<div class="row text-right">
+    <div class="col">
+        <button routerLink="/pacientes"
+            class="btn btn-danger">Regresar</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+
+        <form (ngSubmit)="guardar( f )"
+            #f="ngForm">
+
+            <div class="form-group">
+                <label for="id">ID</label>
+                <input type="text" class="form-control" [(ngModel)]="paciente._id"
+                 name="id" id="id" disabled>
+                <small class="form-text text-muted">Este campo es generado automaticamente</small>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre de la mascota</label>
+                <input type="text" class="form-control" [(ngModel)]="paciente.nombre"
+                 name="nombre" id="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="propietario">Propietario de la mascota</label>
+                <input type="text" class="form-control" [(ngModel)]="paciente.propietario"
+                 name="propietario" id="propietario" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">Fecha de la cita</label>
+                <input type="date" class="form-control" [(ngModel)]="paciente.fecha"
+                 name="fecha" id="fecha" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hora">Hora de la cita</label>
+                <input type="time" class="form-control" [(ngModel)]="paciente.hora"
+                    name="hora" id="hora" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sintomas">Sintomas</label>
+                <textarea name="sintomas" id="sintomas" [(ngModel)]="paciente.sintomas"
+                    rows="5" class="form-control" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary">
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
